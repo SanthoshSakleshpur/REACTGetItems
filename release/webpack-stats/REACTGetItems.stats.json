@@ -2,9 +2,9 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "9ec66fc7a41ce102a552",
-  "time": 2167,
-  "builtAt": 1646937966461,
+  "hash": "d23f3f04561d93ae31eb",
+  "time": 1056,
+  "builtAt": 1646943987944,
   "publicPath": "",
   "outputPath": "/Users/santhoshss/Projects/REACTGetItems/dist",
   "assetsByChunkName": {
@@ -32,7 +32,7 @@
     },
     {
       "name": "react-get-items-web-part.js",
-      "size": 326146,
+      "size": 325535,
       "chunks": [
         "react-get-items-web-part"
       ],
@@ -45,7 +45,7 @@
     },
     {
       "name": "react-get-items-web-part.js.map",
-      "size": 412029,
+      "size": 411014,
       "chunks": [
         "react-get-items-web-part"
       ],
@@ -93,7 +93,7 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 312837,
+      "size": 312414,
       "names": [
         "react-get-items-web-part"
       ],
@@ -101,7 +101,7 @@
         "react-get-items-web-part.js",
         "react-get-items-web-part.js.map"
       ],
-      "hash": "e7becce00467fb0d5bc8",
+      "hash": "fb7a555947b4868b74d6",
       "siblings": [],
       "parents": [],
       "children": [],
@@ -302,7 +302,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "jquery",
-              "loc": "34:8-19"
+              "loc": "33:8-19"
             }
           ],
           "providedExports": null,
@@ -380,7 +380,7 @@
           "name": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "index": 7,
           "index2": 13,
-          "size": 3140,
+          "size": 2717,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -427,7 +427,7 @@
           ],
           "optimizationBailout": [],
           "depth": 1,
-          "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport * as React from 'react';\nimport styles from './ReactGetItems.module.scss';\nimport * as jquery from 'jquery';\nvar ReactGetItems = /** @class */ (function (_super) {\n    __extends(ReactGetItems, _super);\n    function ReactGetItems(props) {\n        var _this = _super.call(this, props) || this;\n        _this.state = {\n            items: [{\n                    \"EmployeeName\": \"\",\n                    \"EmployeeId\": \"\",\n                    \"Experience\": \"\",\n                    \"Location\": \"\",\n                }]\n        };\n        return _this;\n    }\n    ReactGetItems.prototype.componentDidMount = function () {\n        console.log('first--->', this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\");\n        var reactHandler = this;\n        jquery.ajax({\n            url: this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\",\n            type: 'GET',\n            headers: { Accept: 'application/json; odata=verbose;' },\n            success: function (resultData) {\n                console.log('resultData--->', resultData);\n                reactHandler.setState({\n                    items: resultData.d.results,\n                });\n            },\n            error: function (jqXHR, textStatus, errorThrown) { },\n        });\n    };\n    ReactGetItems.prototype.render = function () {\n        var _a = this.props, description = _a.description, siteurl = _a.siteurl;\n        return (React.createElement(\"div\", { className: styles.panelStyle },\n            React.createElement(\"br\", null),\n            React.createElement(\"br\", null),\n            React.createElement(\"div\", { className: styles.tableCaptionStyle },\n                ' ',\n                \"Demo : Retrieve SharePoint List Items using SPFx , REST API & React JS\",\n                ' '),\n            React.createElement(\"br\", null),\n            React.createElement(\"div\", { className: styles.headerCaptionStyle }, \" Employee Details\"),\n            React.createElement(\"div\", { className: styles.tableStyle },\n                React.createElement(\"div\", { className: styles.headerStyle },\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Employee Name\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Employee Id \"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Experience\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Location\")))));\n    };\n    return ReactGetItems;\n}(React.Component));\nexport default ReactGetItems;\n"
+          "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport * as React from 'react';\nimport styles from './ReactGetItems.module.scss';\nimport * as jquery from 'jquery';\nvar ReactGetItems = /** @class */ (function (_super) {\n    __extends(ReactGetItems, _super);\n    function ReactGetItems(props) {\n        var _this = _super.call(this, props) || this;\n        _this.state = {\n            items: [\n                {\n                    Title: '',\n                    Department: '',\n                },\n            ],\n        };\n        return _this;\n    }\n    ReactGetItems.prototype.componentDidMount = function () {\n        var reactHandler = this;\n        jquery.ajax({\n            url: this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\",\n            type: 'GET',\n            headers: { Accept: 'application/json; odata=verbose;' },\n            success: function (resultData) {\n                reactHandler.setState({\n                    items: resultData.d.results,\n                });\n            },\n            error: function (jqXHR, textStatus, errorThrown) { },\n        });\n    };\n    ReactGetItems.prototype.render = function () {\n        var _a;\n        var _b = this.props, description = _b.description, siteurl = _b.siteurl;\n        return (React.createElement(\"div\", { className: styles.panelStyle },\n            React.createElement(\"div\", { className: styles.tableStyle },\n                React.createElement(\"div\", { className: styles.headerStyle },\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Title\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Department\")), (_a = this.state) === null || _a === void 0 ? void 0 :\n                _a.items.map(function (item) {\n                    return (React.createElement(\"div\", { className: styles.rowStyle, key: item.Title },\n                        React.createElement(\"div\", { className: styles.CellStyle }, item.Title),\n                        React.createElement(\"div\", { className: styles.CellStyle }, item.Department)));\n                }))));\n    };\n    return ReactGetItems;\n}(React.Component));\nexport default ReactGetItems;\n"
         },
         {
           "id": "PCH9",
@@ -479,7 +479,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "49:56-62"
+              "loc": "48:56-62"
             },
             {
               "moduleId": "NJVt",
@@ -488,7 +488,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "52:52-58"
+              "loc": "49:52-58"
             },
             {
               "moduleId": "NJVt",
@@ -497,7 +497,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "57:52-58"
+              "loc": "50:56-62"
             },
             {
               "moduleId": "NJVt",
@@ -506,7 +506,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "58:52-58"
+              "loc": "51:60-66"
             },
             {
               "moduleId": "NJVt",
@@ -515,7 +515,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "59:56-62"
+              "loc": "52:60-66"
             },
             {
               "moduleId": "NJVt",
@@ -524,7 +524,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "60:60-66"
+              "loc": "54:68-74"
             },
             {
               "moduleId": "NJVt",
@@ -533,7 +533,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "61:60-66"
+              "loc": "55:64-70"
             },
             {
               "moduleId": "NJVt",
@@ -542,16 +542,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "./ReactGetItems.module.scss",
-              "loc": "62:60-66"
-            },
-            {
-              "moduleId": "NJVt",
-              "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "type": "harmony import specifier",
-              "userRequest": "./ReactGetItems.module.scss",
-              "loc": "63:60-66"
+              "loc": "56:64-70"
             }
           ],
           "providedExports": [
@@ -889,7 +880,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "49:16-35"
+              "loc": "48:16-35"
             },
             {
               "moduleId": "NJVt",
@@ -898,7 +889,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "50:12-31"
+              "loc": "49:12-31"
             },
             {
               "moduleId": "NJVt",
@@ -907,7 +898,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "51:12-31"
+              "loc": "50:16-35"
             },
             {
               "moduleId": "NJVt",
@@ -916,7 +907,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "52:12-31"
+              "loc": "51:20-39"
             },
             {
               "moduleId": "NJVt",
@@ -925,7 +916,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "56:12-31"
+              "loc": "52:20-39"
             },
             {
               "moduleId": "NJVt",
@@ -934,7 +925,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "57:12-31"
+              "loc": "54:28-47"
             },
             {
               "moduleId": "NJVt",
@@ -943,7 +934,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "58:12-31"
+              "loc": "55:24-43"
             },
             {
               "moduleId": "NJVt",
@@ -952,7 +943,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "59:16-35"
+              "loc": "56:24-43"
             },
             {
               "moduleId": "NJVt",
@@ -961,43 +952,7 @@
               "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
               "type": "harmony import specifier",
               "userRequest": "react",
-              "loc": "60:20-39"
-            },
-            {
-              "moduleId": "NJVt",
-              "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "type": "harmony import specifier",
-              "userRequest": "react",
-              "loc": "61:20-39"
-            },
-            {
-              "moduleId": "NJVt",
-              "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "type": "harmony import specifier",
-              "userRequest": "react",
-              "loc": "62:20-39"
-            },
-            {
-              "moduleId": "NJVt",
-              "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "type": "harmony import specifier",
-              "userRequest": "react",
-              "loc": "63:20-39"
-            },
-            {
-              "moduleId": "NJVt",
-              "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-              "type": "harmony import specifier",
-              "userRequest": "react",
-              "loc": "66:2-17"
+              "loc": "60:2-17"
             }
           ],
           "providedExports": null,
@@ -1397,7 +1352,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "jquery",
-          "loc": "34:8-19"
+          "loc": "33:8-19"
         }
       ],
       "providedExports": null,
@@ -1499,7 +1454,7 @@
       "name": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
       "index": 7,
       "index2": 13,
-      "size": 3140,
+      "size": 2717,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -1546,7 +1501,7 @@
       ],
       "optimizationBailout": [],
       "depth": 1,
-      "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport * as React from 'react';\nimport styles from './ReactGetItems.module.scss';\nimport * as jquery from 'jquery';\nvar ReactGetItems = /** @class */ (function (_super) {\n    __extends(ReactGetItems, _super);\n    function ReactGetItems(props) {\n        var _this = _super.call(this, props) || this;\n        _this.state = {\n            items: [{\n                    \"EmployeeName\": \"\",\n                    \"EmployeeId\": \"\",\n                    \"Experience\": \"\",\n                    \"Location\": \"\",\n                }]\n        };\n        return _this;\n    }\n    ReactGetItems.prototype.componentDidMount = function () {\n        console.log('first--->', this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\");\n        var reactHandler = this;\n        jquery.ajax({\n            url: this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\",\n            type: 'GET',\n            headers: { Accept: 'application/json; odata=verbose;' },\n            success: function (resultData) {\n                console.log('resultData--->', resultData);\n                reactHandler.setState({\n                    items: resultData.d.results,\n                });\n            },\n            error: function (jqXHR, textStatus, errorThrown) { },\n        });\n    };\n    ReactGetItems.prototype.render = function () {\n        var _a = this.props, description = _a.description, siteurl = _a.siteurl;\n        return (React.createElement(\"div\", { className: styles.panelStyle },\n            React.createElement(\"br\", null),\n            React.createElement(\"br\", null),\n            React.createElement(\"div\", { className: styles.tableCaptionStyle },\n                ' ',\n                \"Demo : Retrieve SharePoint List Items using SPFx , REST API & React JS\",\n                ' '),\n            React.createElement(\"br\", null),\n            React.createElement(\"div\", { className: styles.headerCaptionStyle }, \" Employee Details\"),\n            React.createElement(\"div\", { className: styles.tableStyle },\n                React.createElement(\"div\", { className: styles.headerStyle },\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Employee Name\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Employee Id \"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Experience\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Location\")))));\n    };\n    return ReactGetItems;\n}(React.Component));\nexport default ReactGetItems;\n"
+      "source": "var __extends = (this && this.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\nimport * as React from 'react';\nimport styles from './ReactGetItems.module.scss';\nimport * as jquery from 'jquery';\nvar ReactGetItems = /** @class */ (function (_super) {\n    __extends(ReactGetItems, _super);\n    function ReactGetItems(props) {\n        var _this = _super.call(this, props) || this;\n        _this.state = {\n            items: [\n                {\n                    Title: '',\n                    Department: '',\n                },\n            ],\n        };\n        return _this;\n    }\n    ReactGetItems.prototype.componentDidMount = function () {\n        var reactHandler = this;\n        jquery.ajax({\n            url: this.props.siteurl + \"/_api/web/lists/getbytitle('Department')/items\",\n            type: 'GET',\n            headers: { Accept: 'application/json; odata=verbose;' },\n            success: function (resultData) {\n                reactHandler.setState({\n                    items: resultData.d.results,\n                });\n            },\n            error: function (jqXHR, textStatus, errorThrown) { },\n        });\n    };\n    ReactGetItems.prototype.render = function () {\n        var _a;\n        var _b = this.props, description = _b.description, siteurl = _b.siteurl;\n        return (React.createElement(\"div\", { className: styles.panelStyle },\n            React.createElement(\"div\", { className: styles.tableStyle },\n                React.createElement(\"div\", { className: styles.headerStyle },\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Title\"),\n                    React.createElement(\"div\", { className: styles.CellStyle }, \"Department\")), (_a = this.state) === null || _a === void 0 ? void 0 :\n                _a.items.map(function (item) {\n                    return (React.createElement(\"div\", { className: styles.rowStyle, key: item.Title },\n                        React.createElement(\"div\", { className: styles.CellStyle }, item.Title),\n                        React.createElement(\"div\", { className: styles.CellStyle }, item.Department)));\n                }))));\n    };\n    return ReactGetItems;\n}(React.Component));\nexport default ReactGetItems;\n"
     },
     {
       "id": "PCH9",
@@ -1598,7 +1553,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "49:56-62"
+          "loc": "48:56-62"
         },
         {
           "moduleId": "NJVt",
@@ -1607,7 +1562,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "52:52-58"
+          "loc": "49:52-58"
         },
         {
           "moduleId": "NJVt",
@@ -1616,7 +1571,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "57:52-58"
+          "loc": "50:56-62"
         },
         {
           "moduleId": "NJVt",
@@ -1625,7 +1580,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "58:52-58"
+          "loc": "51:60-66"
         },
         {
           "moduleId": "NJVt",
@@ -1634,7 +1589,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "59:56-62"
+          "loc": "52:60-66"
         },
         {
           "moduleId": "NJVt",
@@ -1643,7 +1598,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "60:60-66"
+          "loc": "54:68-74"
         },
         {
           "moduleId": "NJVt",
@@ -1652,7 +1607,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "61:60-66"
+          "loc": "55:64-70"
         },
         {
           "moduleId": "NJVt",
@@ -1661,16 +1616,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "./ReactGetItems.module.scss",
-          "loc": "62:60-66"
-        },
-        {
-          "moduleId": "NJVt",
-          "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "type": "harmony import specifier",
-          "userRequest": "./ReactGetItems.module.scss",
-          "loc": "63:60-66"
+          "loc": "56:64-70"
         }
       ],
       "providedExports": [
@@ -2008,7 +1954,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "49:16-35"
+          "loc": "48:16-35"
         },
         {
           "moduleId": "NJVt",
@@ -2017,7 +1963,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "50:12-31"
+          "loc": "49:12-31"
         },
         {
           "moduleId": "NJVt",
@@ -2026,7 +1972,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "51:12-31"
+          "loc": "50:16-35"
         },
         {
           "moduleId": "NJVt",
@@ -2035,7 +1981,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "52:12-31"
+          "loc": "51:20-39"
         },
         {
           "moduleId": "NJVt",
@@ -2044,7 +1990,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "56:12-31"
+          "loc": "52:20-39"
         },
         {
           "moduleId": "NJVt",
@@ -2053,7 +1999,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "57:12-31"
+          "loc": "54:28-47"
         },
         {
           "moduleId": "NJVt",
@@ -2062,7 +2008,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "58:12-31"
+          "loc": "55:24-43"
         },
         {
           "moduleId": "NJVt",
@@ -2071,7 +2017,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "59:16-35"
+          "loc": "56:24-43"
         },
         {
           "moduleId": "NJVt",
@@ -2080,43 +2026,7 @@
           "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
           "type": "harmony import specifier",
           "userRequest": "react",
-          "loc": "60:20-39"
-        },
-        {
-          "moduleId": "NJVt",
-          "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "type": "harmony import specifier",
-          "userRequest": "react",
-          "loc": "61:20-39"
-        },
-        {
-          "moduleId": "NJVt",
-          "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "type": "harmony import specifier",
-          "userRequest": "react",
-          "loc": "62:20-39"
-        },
-        {
-          "moduleId": "NJVt",
-          "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "type": "harmony import specifier",
-          "userRequest": "react",
-          "loc": "63:20-39"
-        },
-        {
-          "moduleId": "NJVt",
-          "moduleIdentifier": "/Users/santhoshss/Projects/REACTGetItems/node_modules/source-map-loader/index.js!/Users/santhoshss/Projects/REACTGetItems/lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "module": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "moduleName": "./lib/webparts/reactGetItems/components/ReactGetItems.js",
-          "type": "harmony import specifier",
-          "userRequest": "react",
-          "loc": "66:2-17"
+          "loc": "60:2-17"
         }
       ],
       "providedExports": null,

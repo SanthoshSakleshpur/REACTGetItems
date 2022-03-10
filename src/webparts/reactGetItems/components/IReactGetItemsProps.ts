@@ -6,3 +6,11 @@ export interface IReactGetItemsProps {
   // hasTeamsContext: boolean;
   // userDisplayName: string;
 }
+
+interface Item {
+  Title: string;
+  Department: string;
+}
+export interface IReactGetItemsState {
+  items: Array<Item>;
+}

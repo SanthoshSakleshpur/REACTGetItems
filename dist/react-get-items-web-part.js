@@ -11264,24 +11264,22 @@ var ReactGetItems = /** @class */ (function (_super) {
     function ReactGetItems(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
-            items: [{
-                    "EmployeeName": "",
-                    "EmployeeId": "",
-                    "Experience": "",
-                    "Location": "",
-                }]
+            items: [
+                {
+                    Title: '',
+                    Department: '',
+                },
+            ],
         };
         return _this;
     }
     ReactGetItems.prototype.componentDidMount = function () {
-        console.log('first--->', this.props.siteurl + "/_api/web/lists/getbytitle('Department')/items");
         var reactHandler = this;
         jquery__WEBPACK_IMPORTED_MODULE_2__["ajax"]({
             url: this.props.siteurl + "/_api/web/lists/getbytitle('Department')/items",
             type: 'GET',
             headers: { Accept: 'application/json; odata=verbose;' },
             success: function (resultData) {
-                console.log('resultData--->', resultData);
                 reactHandler.setState({
                     items: resultData.d.results,
                 });
@@ -11290,22 +11288,18 @@ var ReactGetItems = /** @class */ (function (_super) {
         });
     };
     ReactGetItems.prototype.render = function () {
-        var _a = this.props, description = _a.description, siteurl = _a.siteurl;
+        var _a;
+        var _b = this.props, description = _b.description, siteurl = _b.siteurl;
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelStyle },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCaptionStyle },
-                ' ',
-                "Demo : Retrieve SharePoint List Items using SPFx , REST API & React JS",
-                ' '),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("br", null),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerCaptionStyle }, " Employee Details"),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableStyle },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerStyle },
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Employee Name"),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Employee Id "),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Experience"),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Location")))));
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Title"),
+                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, "Department")), (_a = this.state) === null || _a === void 0 ? void 0 :
+                _a.items.map(function (item) {
+                    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].rowStyle, key: item.Title },
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, item.Title),
+                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _ReactGetItems_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].CellStyle }, item.Department)));
+                }))));
     };
     return ReactGetItems;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
