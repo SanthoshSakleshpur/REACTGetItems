@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "react-get-items",
+    "libraryId": "3577c00e-ba6e-4444-8880-75a14691997b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "react-get-items",
+    "solutionShortDescription": "react-get-items description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
